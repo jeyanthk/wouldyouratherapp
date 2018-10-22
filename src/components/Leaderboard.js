@@ -44,7 +44,7 @@ const Leaderboard = (props) => {
 function mapStateToProps ({ auth, users }) {
   let data = []
 
-  Object.keys(users).map(userId => {
+  Object.keys(users).forEach(userId => {
     data.push({
       id: userId,
       name: users[userId].name,

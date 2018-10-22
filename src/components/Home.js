@@ -8,7 +8,7 @@ const Home = () => {
       <div className="container">
         <div className="hero">
           <div className="text">
-          <Link to="/" className="logo">Would You Rather? 😏</Link>
+          <Link to="/" className="logo"><span role="img" aria-label="would">Would You Rather? 😏</span></Link>
           </div>
           <div className="subtext">
             <br/>

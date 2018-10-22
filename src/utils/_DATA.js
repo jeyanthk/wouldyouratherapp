@@ -230,7 +230,7 @@ export function _saveQuestionAnswer ({
 export function _saveNewUser ({ username, name }) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      Object.keys(users).map(user => {
+      Object.keys(users).forEach(user => {
         if (user === username) {
           resolve({
             error: 'Username Already Taken'

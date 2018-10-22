@@ -36,7 +36,7 @@ class Auth extends Component {
     const username = e.target[0].value
     let found = false
     const { users, dispatch } = this.props
-    users.map(user => {
+    users.forEach(user => {
       if (user === username) {
         found = true
         dispatch(handleUserLogin(username))
@@ -53,7 +53,7 @@ class Auth extends Component {
     const username = e.target[0].value
     const name = e.target[1].value
     const { users, dispatch } = this.props
-    users.map(user => {
+    users.forEach(user => {
       if (user === username) {
         this.setState({ usernameAlreadyTaken: true })
       }
