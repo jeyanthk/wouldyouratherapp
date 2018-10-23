@@ -46,6 +46,7 @@ class QuestionDetails extends Component {
     return (
       <div>
         <UserNav />
+        <span className="hero">Would you rather?</span>
         {question && (
           <div>
             <PostMeta userId={question.author} time={question.timestamp} />

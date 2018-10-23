@@ -7,7 +7,6 @@ const CreateMeta = () => {
       <div className="form-title">
         Create New Question
       </div>
-      <Link to='/leaderboard' className="leaderboard">Leaderboard</Link>
     </div>
   )
 }

@@ -378,13 +378,14 @@ label {
 
 .progress-one {
   height: 100%;
-  background: #808CFA;
+  background: #7ed4f1;
   text-align: center;
+  color:black;
 }
 
 .progress-two {
   height: 100%;
-  background: #FA8080;
+  background: #707070;
   text-align: center;
 }
 

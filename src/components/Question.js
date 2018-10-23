@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAnswer } from '../actions/shared'
+import { Link } from 'react-router-dom'
 
 class Question extends Component {
   constructor (props) {
@@ -43,6 +44,7 @@ class Question extends Component {
           <div className={cls[0]} onClick={() => this.changeOption(1)}>{question.optionOne.text}</div>
           <div className={cls[1]} onClick={() => this.changeOption(2)}>{question.optionTwo.text}</div>
         </div>
+        <Link to={`/questions/${question.id}`}>Polls</Link>
       </div>
     )
   }

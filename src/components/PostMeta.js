@@ -13,7 +13,6 @@ const PostMeta = (props) => {
         <span className="by">Question by {user.name}</span>
         <span className="time">Posted {moment(time).fromNow()}</span>
       </div>
-      <Link to='/leaderboard' className="leaderboard">Leaderboard</Link>
     </div>
   )
 }

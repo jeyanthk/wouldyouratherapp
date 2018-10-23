@@ -64,9 +64,10 @@ class Auth extends Component {
   render () {
     const { login, redirect, userNotFound, usernameAlreadyTaken } = this.state
     const { auth } = this.props
+    const { from } = this.props.location.state || { from: { pathname: '/dashboard' } };
 
-    if (redirect || auth != null) {
-      return <Redirect to='/dashboard' />
+    if (auth != null) {
+      return <Redirect to={from} />
     }
 
     return (
@@ -83,6 +84,7 @@ class Auth extends Component {
                   <div style={{ color: 'red' }}>Username Already Taken</div>
                 )}
                 <form onSubmit={this.handleRegistration}>
+                  <span><b>Would you rather?</b></span>
                   <div className="input-field">
                     <label htmlFor="username">Username:</label><br />
                     <input type="text" id="username" placeholder="Enter your Username" />
