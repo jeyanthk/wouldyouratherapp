@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'https://pbs.twimg.com/profile_images/982796605425303552/phhp5grt_400x400.jpg',
+    avatarURL: 'https://pbs.twimg.com/profile_images/1039352369232789504/M7tgq-c8_400x400.jpg',
     answers: {
       '8xf0y6ziyjabvozdd253nd': 'optionOne',
       '6ni6ok3ym7mf1p33lnez': 'optionOne',
