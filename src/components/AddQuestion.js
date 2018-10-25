@@ -16,10 +16,16 @@ class AddQuestion extends Component {
 
   addQuestion (e) {
     e.preventDefault()
+
     let optOne = e.target[0].value
     let optTwo = e.target[1].value
+    if(e.target[0].value !== '' && e.target[1].value !== ''){
     this.props.dispatch(addQuestionAction(this.props.auth, optOne, optTwo))
     this.setState({ redirect: true })
+    }
+    else{
+      alert("Please enter both the options");
+    }
   }
 
   render () {
