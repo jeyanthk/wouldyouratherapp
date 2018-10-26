@@ -43,6 +43,7 @@ class AddQuestion extends Component {
         <CreateMeta />
         <div className="set">
           <form onSubmit={this.addQuestion}>
+            Would you rather?
             <div className="options">
               <input type="text" className="opt input option-one" placeholder="Enter your first option here" />
               <input type="text" className="opt input option-two" placeholder="Enter your second option here" />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleUserLogin } from '../actions/authedUser'
 import { handleUserRegistration } from '../actions/shared'
@@ -124,4 +124,4 @@ function mapStateToProps ({ users, auth }) {
   }
 }
 
-export default connect(mapStateToProps)(Auth)
+export default withRouter(connect(mapStateToProps)(Auth))

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter} from 'react-router-dom'
 import UserNav from './UserNav'
 import LeaderboardMeta from './LeaderboardMeta'
 
@@ -8,7 +8,7 @@ const Leaderboard = (props) => {
   const { auth, data } = props
 
   if (auth === null) {
-    return <Redirect to='/auth' />
+    return <Redirect to={{pathname: '/auth', state: {pathname: props.location.pathname}}}/>;
   }
 
   return (
@@ -64,4 +64,4 @@ function mapStateToProps ({ auth, users }) {
   }
 }
 
-export default connect(mapStateToProps)(Leaderboard)
+export default withRouter(connect(mapStateToProps)(Leaderboard))

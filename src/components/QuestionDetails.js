@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 import UserNav from './UserNav'
 import PostMeta from './PostMeta'
 import { handleAnswer } from '../actions/shared'
@@ -31,7 +31,7 @@ class QuestionDetails extends Component {
     const { question, auth, total, percOne, percTwo } = this.props
     const { answer } = this.state
     if (auth === null) {
-      return <Redirect to='/auth' />
+    return <Redirect to={{pathname: '/auth', state: {pathname: this.props.location.pathname}}}/>;
     }
     let cls
     if (answer) {
@@ -100,4 +100,4 @@ function mapStateToProps ({ auth, questions, users }, { match }) {
   }
 }
 
-export default connect(mapStateToProps)(QuestionDetails)
+export default withRouter(connect(mapStateToProps)(QuestionDetails))

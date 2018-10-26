@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 import UserNav from './UserNav'
 import Question from './Question'
 import IntroMeta from './IntroMeta'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter} from 'react-router-dom'
 
 const YourQuestions = (props) => {
   const { user, auth, questions } = props
 
   if (auth === null) {
-    return <Redirect to='/auth' />
+    return <Redirect to={{pathname: '/auth', state: {pathname: props.location.pathname}}}/>;
   }
 
   return (
@@ -42,4 +42,4 @@ function mapStateToProps ({ auth, users, questions }) {
   }
 }
 
-export default connect(mapStateToProps)(YourQuestions)
+export default withRouter(connect(mapStateToProps)(YourQuestions))

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import UserNav from './UserNav'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 import IntroMeta from './IntroMeta'
 import Question from './Question'
@@ -27,7 +27,7 @@ class Dashboard extends Component {
     const { answered, unanswered, auth, user } = this.props
     const { answeredQ } = this.state
     if (auth === null) {
-      return <Redirect to='/auth' />
+    return <Redirect to={{pathname: '/auth', state: {pathname: this.props.location.pathname}}}/>;
     }
     return (
       <div>
@@ -75,4 +75,4 @@ function mapStateToProps ({ questions, users, auth }) {
   }
 }
 
-export default connect(mapStateToProps)(Dashboard)
+export default withRouter(connect(mapStateToProps)(Dashboard))
