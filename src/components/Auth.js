@@ -64,8 +64,7 @@ class Auth extends Component {
   render () {
     const { login, redirect, userNotFound, usernameAlreadyTaken } = this.state
     const { auth } = this.props
-    const { from } = this.props.location.state || { from: { pathname: '/dashboard' } };
-
+    const from = this.props.location.state || { pathname: '/dashboard' };
     if (auth != null) {
       return <Redirect to={from} />
     }
