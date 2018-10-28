@@ -4,6 +4,7 @@ import { Redirect, withRouter } from 'react-router-dom'
 import UserNav from './UserNav'
 import PostMeta from './PostMeta'
 import { handleAnswer } from '../actions/shared'
+import InvalidQuestion from './InvalidQuestion'
 
 class QuestionDetails extends Component {
   constructor (props) {
@@ -43,6 +44,9 @@ class QuestionDetails extends Component {
     } else {
       cls = ['opt option-one', 'opt option-two']
     }
+    if (!question) {
+    return <Redirect to='/invalidQuestion'/>;
+    }
     return (
       <div>
         <UserNav />
@@ -80,7 +84,9 @@ function mapStateToProps ({ auth, questions, users }, { match }) {
 
   if (auth !== null) {
     const answers = users[auth].answers
-
+    if (question===undefined){
+    return;
+    }
     if (answers.hasOwnProperty(question.id)) {
       answer = answers[question.id]
     }
